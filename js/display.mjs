@@ -7,7 +7,7 @@ Created by B. Flierl
 // WebSocket setup
 
 let remoteIP=location.host;
-let ws = new WebSocket('ws://' + remoteIP);
+let ws = new WebSocket('wss://' + remoteIP);
 
 ws.onmessage = event => {
   const data = JSON.parse(event.data);
@@ -25,7 +25,6 @@ function updateIP(){
   const ip = document.getElementById('ip');
   if (ip) {
     remoteIP = ip.value;
-    ws.close();
     ws = new WebSocket('ws://' + remoteIP);
   }
 }
