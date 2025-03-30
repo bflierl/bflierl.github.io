@@ -9,7 +9,7 @@ if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('js/pwa_sw.js');
 }
 let remoteIP=location.host;
-let ws = new WebSocket('wss://' + remoteIP);
+let ws = new WebSocket('ws://' + remoteIP);
 
 ws.onmessage = event => {
   const data = JSON.parse(event.data);
@@ -27,7 +27,7 @@ function updateIP(){
   const ip = document.getElementById('ip');
   if (ip) {
     remoteIP = ip.value;
-    ws = new WebSocket('wss://' + remoteIP);
+    ws = new WebSocket('ws://' + remoteIP);
   }
 }
 
