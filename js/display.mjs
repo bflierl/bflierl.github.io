@@ -25,7 +25,7 @@ function updateIP(){
   const ip = document.getElementById('ip');
   if (ip) {
     remoteIP = ip.value;
-    ws = new WebSocket('ws://' + remoteIP);
+    ws = new WebSocket('wss://' + remoteIP);
   }
 }
 
