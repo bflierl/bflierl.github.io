@@ -5,7 +5,9 @@ Created by B. Flierl
 
 
 // WebSocket setup
-
+if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('js/pwa_sw.js');
+}
 let remoteIP=location.host;
 let ws = new WebSocket('wss://' + remoteIP);
 
