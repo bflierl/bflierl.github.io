@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dashboard</title>
-  <link rel="manifest" href="/manifest.json"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Minimal PWA</title>
 
+  <!-- PWA Meta -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#317EFB"/>
+  <link rel="icon" href="icon.png">
+
+  <script defer src="app.js"></script>
 </head>
 <body>
-
-<div>
-  <label>IP:
-    <input type="text" id="ip" onchange="updateIP()" placeholder="Enter IP"/>
-  </label>
-</div>
-<div id="data"></div>
-
-<script src="js/display.mjs"></script>
-
+  <h1>Hello PWA 👋</h1>
+  <p>Status: <span id="status">Connecting...</span></p>
 </body>
+</html>

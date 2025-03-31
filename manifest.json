@@ -1,13 +1,13 @@
 {
-  "name": "MONA",
-  "short_name": "LiveData",
-  "start_url": "/",
+  "name": "Minimal PWA",
+  "short_name": "PWA",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "theme_color": "#317EFB",
   "icons": [
     {
-      "src": "/pic/icon.png",
+      "src": "icon.png",
       "sizes": "76x76",
       "type": "image/png"
     }
