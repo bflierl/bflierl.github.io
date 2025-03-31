@@ -6,10 +6,12 @@ Created by B. Flierl
 
 // WebSocket setup
 if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('js/pwa_sw.js');
+      navigator.serviceWorker.register('pwa_sw.js');
 }
+
+
 let remoteIP=location.host;
-let ws = new WebSocket('ws://' + remoteIP);
+let ws = new WebSocket('wss://' + remoteIP);
 
 ws.onmessage = event => {
   const data = JSON.parse(event.data);
@@ -17,17 +19,13 @@ ws.onmessage = event => {
     document.getElementById('data').textContent = data.doseRate.value.toFixed(2);
   }};
 
-// Service worker for PWA
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/js/pwa_sw.js');
-}
 
 
 function updateIP(){
   const ip = document.getElementById('ip');
   if (ip) {
     remoteIP = ip.value;
-    ws = new WebSocket('ws://' + remoteIP);
+    ws = new WebSocket('wss://' + remoteIP);
   }
 }
 
