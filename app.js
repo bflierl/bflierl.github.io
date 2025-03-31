@@ -16,7 +16,8 @@ ws.onopen = () => {
 ws.onmessage = (msg) => {
 
   console.log('Message from server:', msg.data);
-  document.getElementById('data').textContent = msg.data;
+  const data = document.getElementById('data');
+  data.textContent = msg.data;
 };
 
 ws.onclose = () => {
