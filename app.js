@@ -6,7 +6,7 @@ if ('serviceWorker' in navigator) {
 
 // WebSocket connection
 const status = document.getElementById('status');
-const ws = new WebSocket('wss://echo.websocket.events'); // Simple public echo server
+const ws = new WebSocket('ws://192.168.178.59:3000'); // Simple public echo server
 
 ws.onopen = () => {
   status.textContent = 'Connected!';
@@ -14,7 +14,9 @@ ws.onopen = () => {
 };
 
 ws.onmessage = (msg) => {
+
   console.log('Message from server:', msg.data);
+  document.getElementById('data').textContent = msg.data;
 };
 
 ws.onclose = () => {
