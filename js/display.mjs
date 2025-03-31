@@ -6,8 +6,7 @@ Created by B. Flierl
 
 // WebSocket setup
 if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('pwa_sw.js').register('/service-worker.js')
-    .then(() => {
+      navigator.serviceWorker.register('pwa_sw.js').then(() => {
       console.log('Service worker registered');
     })
     .catch(err => {
